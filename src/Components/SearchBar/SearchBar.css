@@ -1,0 +1,9 @@
+input[type=text] {
+    /* background-color: #FF6600; */
+    height: 40px;
+    width: 100%;
+    padding-left: 10px;
+    border-radius: 100px;
+    border: solid #808080;
+    /* padding: 4px; */
+}
