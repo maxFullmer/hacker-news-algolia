@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './SearchButton.css';
 
-export default function SearchButton() {
-    return (
-            <input type="submit" value="Search" />
-    )
+const SearchButton = () => {
+    return <input type="submit" value="Search" />
 }
+
+export default SearchButton;
