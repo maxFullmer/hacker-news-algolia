@@ -8,10 +8,14 @@ import FilterOptions from './Components/FilterOptions/FilterOptions.js';
 import HackerNewsResults from './Components/HackerNewsResults/HackerNewsResults.js';
 
 const App = (props) => {
-  const { currentSearchTerm, filterOption, getHackerNewsResults } = props;
+  const { currentSearchTerm, filterOption, getHackerNewsResults, searchTermList } = props;
   console.log('redux state in App: ', props)
   return (
     <main>
+      <section id="redux-state">Logged Search Terms: {searchTermList.map((term, index) => 
+        <span key={index}>{term}, </span>)}
+      </section>
+
       <form id="search-container" 
             onSubmit={(event) => {
                 event.preventDefault();
