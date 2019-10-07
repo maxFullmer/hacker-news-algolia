@@ -25,7 +25,10 @@ export default function hackerNews(state = initialState, action) {
 
 // action creators
 
+// api call
+// 1) arguements are the redux state read by connected React components
 export function getHackerNewsResults(searchTerm, filterOption) {
+    // 2) set up RESTful api call with necessary header/body info
     let wholeQuery;
 
     if (filterOption === "title") {
@@ -38,6 +41,8 @@ export function getHackerNewsResults(searchTerm, filterOption) {
         wholeQuery = `query=${searchTerm}`
     }
     
+    /* 3) thanks to redux-promise-middleware, we can store a promise (async function) as a variable,
+    which can be used as a payload */
     const data = function() {
         return axios.get(`http://hn.algolia.com/api/v1/search?${wholeQuery}`)
         .then(hackerNewsResults => {
